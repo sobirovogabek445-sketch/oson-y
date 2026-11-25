@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: var(--font-sans);
+    background-color: #110709;
+    color: #f9f2f3;
+  }
+}
+
+/* Custom dark crimson scrollbar */
+.crimson-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.crimson-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crimson-scroll::-webkit-scrollbar-thumb {
+  background: rgba(185, 28, 28, 0.35);
+  border-radius: 9999px;
+}
+
+.crimson-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.55);
+}
+
+/* Radar pulse for active GPS location marker */
+@keyframes gps-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-gps-ring {
+  animation: gps-ring 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-gps-ring {
+    animation: none;
+  }
+}

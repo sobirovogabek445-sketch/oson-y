@@ -1,0 +1,6 @@
+{
+  "name": "oson.Y",
+  "description": "Turgan joyingizdan eng yaqin dorixona, shifoxona, do'kon va boshqa zarur manzillarni xaritadan topib, eng qisqa yo'nalishni ko'rsatuvchi ilova.",
+  "requestFramePermissions": ["geolocation", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
